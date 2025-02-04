@@ -4,5 +4,25 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+    "settings": {
+        "git.autofetch": true,
+        "launch": {
+            "configurations": [],
+            "compounds": []
+        },
+        "terminal.integrated.profiles.windows": {
+            "PowerShell": {
+                "source": "PowerShell",
+                "icon": "terminal-powershell",
+                "args": ["-NoExit", "-Command", "& { . .venv\\Scripts\\Activate.ps1 }"]
+            }
+        },
+        "terminal.integrated.defaultProfile.windows": "PowerShell",
+        "files.exclude": {
+            "**/.venv": true,
+            "**/node_modules": true
+        },
+        "search.useGlobalIgnoreFiles": true,
+        "git.enableSmartCommit": true
+    }
 }
