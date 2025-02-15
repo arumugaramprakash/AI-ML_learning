@@ -1,0 +1,19 @@
+import torch
+from guuf_model import GuuFModel  # Assuming GuuFModel is defined in a file called guuf_model.py
+
+# Step 1: Load the .guuf model
+# Replace 'path_to_your_guuf_model' with the actual path to your GuuF model file
+model = GuuFModel('path_to_your_guuf_model')
+
+# Step 2: Convert the model to a format suitable for ONNX export
+# This step might involve converting the model to PyTorch and ensuring it's in eval mode
+model.eval()
+
+# Example dummy input (replace with actual input shape and type)
+dummy_input = torch.randn(1, 3, 224, 224)
+
+# Step 3: Export to ONNX
+# Replace 'path_to_save_onnx_model' with the desired path where you want to save the ONNX model
+torch.onnx.export(model, dummy_input, 'path_to_save_onnx_model.onnx', verbose=True)
+
+print("Model has been successfully converted to ONNX format.")
